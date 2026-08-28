@@ -10,7 +10,18 @@
 Bu çalışmada, Titanic veri seti üzerindeki eksik veriler temizlenmiş, yeni öznitelikler türetilmiş (Özellik Mühendisliği) ve farklı sınıflandırma modelleri karşılaştırılarak en yüksek doğruluk oranına ulaşılmıştır.
 
 * **Problem Türü:** İkili Sınıflandırma (Binary Classification - 0 veya 1)
-* **En İyi Model:** En Uygun Sınıflandırma Modeli (%80.22 Doğruluk)
+* **Şampiyon Model:** Random Forest (%80.22 Doğruluk)
+
+---
+
+## 📊 Exploratory Data Analysis (EDA)
+Veri setinin yapısını anlamak ve değişkenler arasındaki ilişkileri incelemek amacıyla gerçekleştirilen analiz adımları:
+* **Survival Distribution:** Hayatta kalan ve vefat eden yolcuların genel dağılımı.
+* **Passenger Class Analysis:** Bilet sınıfının (`Pclass`) hayatta kalma oranına etkisi.
+* **Gender Analysis:** Cinsiyet (`Sex`) değişkeninin en baskın faktör olduğunun tespiti.
+* **Age Distribution:** Yaş gruplarının hayatta kalma şansına dağılımı.
+* **Correlation Heatmap:** Sayısal değişkenler arasındaki korelasyon matrisi.
+* **Pivot Tables:** Cinsiyet ve sınıf kırılımında çapraz analizler.
 
 ---
 
@@ -32,12 +43,12 @@ Bu çalışmada, Titanic veri seti üzerindeki eksik veriler temizlenmiş, yeni 
 | **Başlangıç (Referanslar)** | ~%63,00 |
 | **Karar Ağacı** | %74,63 |
 | **Lojistik Regresyon** | %79,85 |
-| **En İyi Model ⭐** | **%80,22** |
+| **Random Forest ⭐** | **%80,22** |
 
 ---
 
 ## 🧭 Özet Mimari Akış
-`Ham Veri (CSV)` ➔ `Ön İşleme & EDA` ➔ `Özellik Mühendisliği` ➔ `En Uygun Model (%80.22)` ➔ `Hata & Önem Analizi`
+`Ham Veri (CSV)` ➔ `Ön İşleme & EDA` ➔ `Özellik Mühendisliği` ➔ `Model Eğitimi` ➔ `Hata & Önem Analizi`
 
 ---
 
@@ -60,15 +71,7 @@ Bu çalışmada, Titanic veri seti üzerindeki eksik veriler temizlenmiş, yeni 
 ## 📁 Project Structure
 ```text
 Titanic-Survival-Prediction/
-
-
-🚀 Installation
-Bash
-git clone [https://github.com/ilaydaylcnz/titanic-machine-learning-project.git](https://github.com/ilaydaylcnz/titanic-machine-learning-project.git)
-Bash
-pip install pandas numpy matplotlib seaborn scikit-learn
-Run the notebook using Jupyter Notebook or Kaggle.
 │
 ├── data-science-titanic-project.ipynb
 ├── README.md
-└── images/ (optional)
+└── images/
