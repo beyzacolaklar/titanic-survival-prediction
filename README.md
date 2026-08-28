@@ -1,4 +1,4 @@
-# titanic-survival-predictio
+
 # 🚢 Titanic Survival Prediction
 
 > Makine öğrenmesi algoritmaları kullanarak Titanic kazasındaki yolcuların hayatta kalma durumlarını tahmin eden uçtan uca bir veri bilimi projesi.
