@@ -1,38 +1,41 @@
 # titanic-survival-prediction
-# 🚢 Titanic Survival Prediction Pipeline
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Model-Random%20Forest-blueviolet?style=flat-square&logo=python" alt="Model">
-  <img src="https://img.shields.io/badge/Accuracy-80.22%25-success?style=flat-square" alt="Accuracy">
-  <img src="https://img.shields.io/badge/Task-Binary%25Classification-orange?style=flat-square" alt="Task">
-</p>
+# 🚢 Titanic Survival Prediction
+
+> Makine öğrenmesi algoritmaları kullanarak Titanic kazasındaki yolcuların hayatta kalma durumlarını tahmin eden uçtan uca bir veri bilimi projesi.
 
 ---
 
-## 🏗️ Mimari Akış Şeması (Pipeline Diagram)
+## 📌 Proje Özeti
+Bu çalışmada, Titanic veri seti üzerindeki eksik veriler temizlenmiş, yeni öznitelikler türetilmiş (Feature Engineering) ve farklı sınıflandırma modelleri karşılaştırılarak en yüksek doğruluk oranına ulaşılmıştır.
 
-```text
-[ Raw Data: train.csv ]
-         │
-         ▼
-[ 1. Data Preprocessing & Cleaning ] 
-         ├── Missing Values (Age -> Median, Cabin Drop/Transform)
-         └── Outlier Capping (IQR Method on Fare)
-         │
-         ▼
-[ 2. Feature Engineering ]
-         ├── FamilySize = SibSp + Parch + 1
-         ├── IsAlone & Title Extraction (from Name)
-         └── Encoding (Label & One-Hot Encoding)
-         │
-         ▼
-[ 3. Modeling & Classification ]
-         ├── Baseline (~63.0%)
-         ├── Decision Tree (74.63%)
-         ├── Logistic Regression (79.85%)
-         └── Random Forest [Champion] (80.22%)
-         │
-         ▼
-[ 4. Evaluation & Insights ]
-         ├── Confusion Matrix (False Positive / False Negative Analysis)
-         └── Feature Importance (Sex & Fare Dominance)
+* **Problem Türü:** İkili Sınıflandırma (Binary Classification - 0 veya 1)
+* **En İyi Model:** Random Forest (%80.22 Accuracy)
+
+---
+
+## 🔄 Proje İş Akışı
+1. **Keşifsel Veri Analizi (EDA):** Verinin yapısının incelenmesi ve görselleştirilmesi.
+2. **Veri Ön İşleme:** Eksik verilerin doldurulması (`Age` -> Medyan) ve IQR yöntemiyle aykırı değerlerin baskılanması.
+3. **Özellik Mühendisliği (Feature Engineering):** 
+   - `FamilySize` ve `IsAlone` türetilmesi
+   - `Name` sütunundan unvanların (`Title`) çekilmesi
+   - One-Hot Encoding işlemleri
+4. **Modelleme:** Baseline, Decision Tree, Logistic Regression ve Random Forest algoritmalarının koşturulması.
+
+---
+
+## 🏆 Model Performans Sonuçları
+
+| Model | Doğruluk (Accuracy) | Durum |
+| :--- | :---: | :--- |
+| **Baseline (Referans)** | ~63.00% | Başlangıç Çizgisi |
+| **Decision Tree** | 74.63% | Overfitting Eğilimli |
+| **Logistic Regression** | 79.85% | Kararlı Model |
+| **Random Forest ⭐** | **80.22%** | **Şampiyon Model** |
+
+---
+
+## 💡 Kritik Bulgular
+* **Feature Importance:** Modelin kararlarını veren en baskın özellikler **Cinsiyet (`Sex` - %24.2)** ve **Bilet Ücreti (`Fare` - %22.0)** olmuştur.
+* **Hata Analizi:** Modeller vefat edenleri yüksek başarıyla tahmin ederken, en çok **False Negative (Kaçırılan Kurtulanlar)** grubunda zorlanmıştır.
