@@ -7,10 +7,10 @@
 ---
 
 ## 📌 Proje Özeti
-Bu çalışmada, Titanic veri seti üzerindeki eksik veriler temizlenmiş, yeni öznitelikler türetilmiş (Feature Engineering) ve farklı sınıflandırma modelleri karşılaştırılarak en yüksek doğruluk oranına ulaşılmıştır.
+Bu çalışmada, Titanic veri seti üzerindeki eksik veriler temizlenmiş, yeni öznitelikler türetilmiş (Özellik Mühendisliği) ve farklı sınıflandırma modelleri karşılaştırılarak en yüksek doğruluk oranına ulaşılmıştır.
 
 * **Problem Türü:** İkili Sınıflandırma (Binary Classification - 0 veya 1)
-* **En İyi Model:** Random Forest (%80.22 Accuracy)
+* **En İyi Model:** En Uygun Sınıflandırma Modeli (%80.22 Doğruluk)
 
 ---
 
@@ -27,21 +27,48 @@ Bu çalışmada, Titanic veri seti üzerindeki eksik veriler temizlenmiş, yeni 
 
 ## 🏆 Model Performans Sonuçları
 
-| Model | Doğruluk (Accuracy) | Durum |
-| :--- | :---: | :--- |
-| **Baseline (Referans)** | ~63.00% | Başlangıç Çizgisi |
-| **Decision Tree** | 74.63% | Overfitting Eğilimli |
-| **Logistic Regression** | 79.85% | Kararlı Model |
-| **Random Forest ⭐** | **80.22%** | **Şampiyon Model** |
-
+| Model | Doğruluk (Accuracy) |
+| :--- | :---: |
+| **Başlangıç (Referanslar)** | ~%63,00 |
+| **Karar Ağacı** | %74,63 |
+| **Lojistik Regresyon** | %79,85 |
+| **En İyi Model ⭐** | **%80,22** |
 
 ---
 
 ## 🧭 Özet Mimari Akış
-`Ham Veri (CSV)` ➔ `Ön İşleme & EDA` ➔ `Özellik Mühendisliği` ➔ `Random Forest (%80.22)` ➔ `Hata & Önem Analizi`
+`Ham Veri (CSV)` ➔ `Ön İşleme & EDA` ➔ `Özellik Mühendisliği` ➔ `En Uygun Model (%80.22)` ➔ `Hata & Önem Analizi`
 
 ---
 
 ## 💡 Kritik Bulgular
-* **Feature Importance:** Modelin kararlarını veren en baskın özellikler **Cinsiyet (`Sex` - %24.2)** ve **Bilet Ücreti (`Fare` - %22.0)** olmuştur.
-* **Hata Analizi:** Modeller vefat edenleri yüksek başarıyla tahmin ederken, en çok **False Negative (Kaçırılan Kurtulanlar)** grubunda zorlanmıştır.
+* **Özelliğin Önemi:** Modelin kararlarını veren en baskın özellikler **Cinsiyet (`Sex` - %24.2)** ve **Bilet Ücreti (`Fare` - %22.0)** olmuştur.
+* **Hata Analizi:** Modeller vefat edenleri yüksek başarıyla tahmin ederken, en çok **Yanlış Negatif (Kaçırılan Kurtulanlar)** grubunda zorlanmıştır.
+
+---
+
+## 🧰 Technologies Used
+* Python
+* Pandas
+* NumPy
+* Matplotlib
+* Seaborn
+* Scikit-learn
+
+---
+
+## 📁 Project Structure
+```text
+Titanic-Survival-Prediction/
+
+
+🚀 Installation
+Bash
+git clone [https://github.com/ilaydaylcnz/titanic-machine-learning-project.git](https://github.com/ilaydaylcnz/titanic-machine-learning-project.git)
+Bash
+pip install pandas numpy matplotlib seaborn scikit-learn
+Run the notebook using Jupyter Notebook or Kaggle.
+│
+├── data-science-titanic-project.ipynb
+├── README.md
+└── images/ (optional)
