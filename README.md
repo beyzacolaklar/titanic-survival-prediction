@@ -1,5 +1,4 @@
-# titanic-survival-prediction
-
+# titanic-survival-predictio
 # 🚢 Titanic Survival Prediction
 
 > Makine öğrenmesi algoritmaları kullanarak Titanic kazasındaki yolcuların hayatta kalma durumlarını tahmin eden uçtan uca bir veri bilimi projesi.
@@ -25,6 +24,11 @@ Veri setinin yapısını anlamak ve değişkenler arasındaki ilişkileri incele
 
 ---
 
+## 🧭 Özet Mimari Akış
+`Ham Veri (CSV)` ➔ `Ön İşleme & EDA` ➔ `Özellik Mühendisliği` ➔ `Model Eğitimi` ➔ `Hata & Önem Analizi`
+
+---
+
 ## 🔄 Proje İş Akışı
 1. **Keşifsel Veri Analizi (EDA):** Verinin yapısının incelenmesi ve görselleştirilmesi.
 2. **Veri Ön İşleme:** Eksik verilerin doldurulması (`Age` -> Medyan) ve IQR yöntemiyle aykırı değerlerin baskılanması.
@@ -44,11 +48,6 @@ Veri setinin yapısını anlamak ve değişkenler arasındaki ilişkileri incele
 | **Karar Ağacı** | %74,63 |
 | **Lojistik Regresyon** | %79,85 |
 | **Random Forest ⭐** | **%80,22** |
-
----
-
-## 🧭 Özet Mimari Akış
-`Ham Veri (CSV)` ➔ `Ön İşleme & EDA` ➔ `Özellik Mühendisliği` ➔ `Model Eğitimi` ➔ `Hata & Önem Analizi`
 
 ---
 
