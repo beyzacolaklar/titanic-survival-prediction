@@ -34,6 +34,12 @@ Bu çalışmada, Titanic veri seti üzerindeki eksik veriler temizlenmiş, yeni 
 | **Logistic Regression** | 79.85% | Kararlı Model |
 | **Random Forest ⭐** | **80.22%** | **Şampiyon Model** |
 
+
+---
+
+## 🧭 Özet Mimari Akış
+`Ham Veri (CSV)` ➔ `Ön İşleme & EDA` ➔ `Özellik Mühendisliği` ➔ `Random Forest (%80.22)` ➔ `Hata & Önem Analizi`
+
 ---
 
 ## 💡 Kritik Bulgular
